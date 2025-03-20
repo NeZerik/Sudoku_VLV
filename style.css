@@ -173,19 +173,11 @@ body{
 /* Для мобільних пристроїв */
 @media (max-width: 600px) {
     #restart-btn {
-        top: 16%;
-        left: 94%;
-        right: auto;
-        transform: translateX(-50%);
+        position: fixed; 
+        top: 10px;
+        right: 10px; 
+        width: 50px; 
+        height: 50px;
+        z-index: 1000; 
     }
-}
-
-
-.animation-class {
-    animation: fadeOut 5s; /* Анімація згасання */
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
 }
