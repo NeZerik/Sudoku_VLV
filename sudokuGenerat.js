@@ -81,7 +81,7 @@ function resolveSudoku(grid) {
  }
 
 function removeCells(grid, ) {
-    const difficulty = 5;
+    const difficulty = 30;
     const resultGrid = [...grid].map(row => [...row]);
 
     let i = 0;
