@@ -1,11 +1,11 @@
 import { findEmptyCell } from "./sudokuGenerat.js";
 
 let timerInterval;
-let elapsedTime = 0; // Час у секундах
+let elapsedTime = 0;
 let isPaused = false;
 
 export function startTimer() {
-    stopTimer(); // Щоб уникнути подвійного запуску
+    stopTimer();
     timerInterval = setInterval(() => {
         if (!isPaused) {
             elapsedTime++;
@@ -30,11 +30,10 @@ function updateTimerDisplay() {
     `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
-// Підключаємо обробник події до кнопки паузи
 document.getElementById('pause-btn').addEventListener('click', BtnPause);
 
 export function checkGameStatus(grid) {
-    if (findEmptyCell(grid) === null) { // Якщо немає порожніх клітинок
+    if (findEmptyCell(grid) === null) {
         stopTimer(); 
     }
 }

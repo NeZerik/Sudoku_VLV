@@ -7,7 +7,7 @@ let cells;
 let selectedCellIndex;
 let selectedCell;
 
-startTimer();// Запуск таймера при старті гри
+startTimer();
 init();
 
 function init() {
@@ -117,9 +117,8 @@ function onNumberClick(number) {
 
 function updateNumberButtonsVisibility() {
     const numbers = document.querySelectorAll('.number');
-    const count = Array(10).fill(0); // Массив для подсчета количества каждого числа
+    const count = Array(10).fill(0);
 
-    // Подсчет сколько раз каждое число встречается в судоку
     for (let row = 0; row < GRID_SIZE; row++) {
         for (let column = 0; column < GRID_SIZE; column++) {
             const value = sudoku.grid[row][column];
@@ -127,14 +126,11 @@ function updateNumberButtonsVisibility() {
         }
     }
 
-    // Проверяем каждую кнопку, если число использовано 9 раз — применяем класс 'disabled'
     numbers.forEach(number => {
         const num = parseInt(number.innerHTML);
         if (count[num] >= 9) {
-            // Добавляем класс 'disabled', если число использовано 9 раз
             number.classList.add('disabled');
         } else {
-            // Убираем класс 'disabled', если число можно еще использовать
             number.classList.remove('disabled');
         }
     });
@@ -179,11 +175,9 @@ function onRemoveClick(){
     selectedCell.innerHTML = '';
     sudoku.grid[row][column] = null;
 
-    // Оновлення кнопок
     updateNumberButtonsVisibility();
 }
 
-// Викликати оновлення при старті гри
 updateNumberButtonsVisibility();
 
 function initKeyEvent (){

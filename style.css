@@ -85,8 +85,8 @@ body{
 }
 
 .number.disabled {
-    opacity: 0.3; /* Тусклость кнопки */
-    pointer-events: none; /* Блокировка взаимодействия */
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .numbers,
@@ -165,13 +165,12 @@ body{
     cursor: pointer;
     transition: 0.3s;
 }
-/* Для мобільних пристроїв */
 @media (max-width: 600px) {
     #restart-btn {
-        position: fixed; /* Фіксує кнопку на екрані */
-        top: 5px; /* Відступ від верхнього краю */
-        right: 10px; /* Відступ від правого краю */
-        width: 50px; /* Розмір кнопки */
+        position: fixed; 
+        top: 5px; 
+        right: 10px; 
+        width: 50px; 
         height: 50px;
         }
     #timer {
@@ -196,13 +195,15 @@ body{
 }
 
 #timer {
-    top: 10px; /* Відступ від верхнього краю */
-    left: 10px; /* Відступ від лівого краю */
+    top: 10px;
+    left: 10px;
 }
+
 #pause-btn{
-    top: 10px; /* Відступ від верхнього краю */
-    left: 110px; /* Відступ від лівого краю */
+    top: 10px; 
+    left: 110px; 
 }
+
 #pause-btn,
 #timer {
     position: fixed;
