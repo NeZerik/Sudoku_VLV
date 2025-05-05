@@ -1,12 +1,13 @@
 import { Sudoku } from "./sudoku.js";
-import { BOX_SIZE, GRID_SIZE} from "./untilities.js";
-import {convertIndexToPosition, convertPositionToIndex } from "./untilities.js";
-import { generateSudoku } from "./sudokuGenerat.js";
+import { BOX_SIZE, GRID_SIZE, convertIndexToPosition, convertPositionToIndex } from "./untilities.js";
+import { startTimer, stopTimer} from "./timer.js";
 
 const sudoku = new Sudoku();
 let cells;
 let selectedCellIndex;
 let selectedCell;
+
+startTimer();// Запуск таймера при старті гри
 init();
 
 function init() {
@@ -198,6 +199,8 @@ function initKeyEvent (){
 
 
 function winAnimation() {
+    stopTimer();
+
     cells.forEach(cell => cell.classList.remove('error', 'shake', 'zoom', 'selected', 'highlighted'));
     setTimeout(() => {
         cells.forEach((cell, i) => {
@@ -216,13 +219,8 @@ function winAnimation() {
         }, 800);
     }, 200);
 }
-
-document.getElementById('restart-btn').addEventListener('click', function() {
-    // Додаємо клас для анімації
-    document.body.classList.add('animation-class');
-
-    // Перезавантажуємо сторінку після 5 секунд
+    document.getElementById('restart-btn').addEventListener('click', function() {
     setTimeout(function() {
-        location.reload();
-    }); // 5000 мілісекунд = 5 секунд
+    location.reload();
+    });
 });

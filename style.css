@@ -15,7 +15,7 @@
     --gap: 0.4vmin;
     
     --font-size: 3vmin ;
-
+    --tm-rs-size: 4vmin ;
 }
 @media ( max-width: 600px ) {
     :root{
@@ -158,34 +158,59 @@ body{
     top: 10px;
     right: 10px;
     padding: 10px;
-    font-size: 20px;
+    font-size:var(--tm-rs-size);
     background-color: #8a8aff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
-
-#restart-btn:hover {
-    background-color: #6a6aff;
-}
-
 /* Для мобільних пристроїв */
 @media (max-width: 600px) {
     #restart-btn {
-        top: 16%;
-        left: 94%;
-        right: auto;
-        transform: translateX(-50%);
-    }
+        position: fixed; /* Фіксує кнопку на екрані */
+        top: 5px; /* Відступ від верхнього краю */
+        right: 10px; /* Відступ від правого краю */
+        width: 50px; /* Розмір кнопки */
+        height: 50px;
+        }
+    #timer {
+        position: fixed;
+        width: 100px !important;
+        height: 100px !important;
+        font-size: 30px !important;
+        top: 5px !important ;
+        left: 5px !important ;
+        }
+    #pause-btn{
+        position: fixed;
+        width: 100px !important;
+        height: 100px !important;
+        font-size: 40px !important;
+        top: -20px !important ;
+        left: 80px !important ;
+        }
+}
+#restart-btn:hover {
+    background-color: #0056b3;
 }
 
-
-.animation-class {
-    animation: fadeOut 5s; /* Анімація згасання */
+#timer {
+    top: 10px; /* Відступ від верхнього краю */
+    left: 10px; /* Відступ від лівого краю */
 }
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+#pause-btn{
+    top: 10px; /* Відступ від верхнього краю */
+    left: 110px; /* Відступ від лівого краю */
+}
+#pause-btn,
+#timer {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: none;
+    font-size: var(--tm-rs-size);
+    text-align: center;
+    line-height: 50px;
+    border: none;
 }

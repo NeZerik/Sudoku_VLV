@@ -6,7 +6,6 @@ export function generateSudoku() {
     return removeCells(sudoku);
 }
 
-
 function createEmptyGrid(){
     return new Array(GRID_SIZE).fill().map(()=> new Array (GRID_SIZE).fill(null)); 
 }
@@ -14,17 +13,12 @@ function createEmptyGrid(){
 function resolveSudoku(grid) {
     const emptyCell = findEmptyCell(grid)
     if (!emptyCell) return true;
-
-   const numbers = getRandomNumbers();
-
+     const numbers = getRandomNumbers();
    for(let i=0;i < numbers.length; i++){
     if(!validate(grid, emptyCell.row, emptyCell.column, numbers[i])) continue;
-    
-    grid[emptyCell.row][emptyCell.column] = numbers [i];
-
+        grid[emptyCell.row][emptyCell.column] = numbers [i];
     if (resolveSudoku(grid)) return true;
-
-    grid[emptyCell.row][emptyCell.column] = null;
+        grid[emptyCell.row][emptyCell.column] = null;
    }
 }
 
@@ -80,7 +74,7 @@ function resolveSudoku(grid) {
   return true;
  }
 
-function removeCells(grid, ) {
+function removeCells(grid) {
     const difficulty = 1;
     const resultGrid = [...grid].map(row => [...row]);
 

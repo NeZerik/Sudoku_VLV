@@ -1,8 +1,6 @@
 import { generateSudoku, findEmptyCell } from "./sudokuGenerat.js";
 import { BOX_SIZE, GRID_SIZE } from "./untilities.js";
 
-
-
 export class Sudoku{
     constructor(){
         this.grid=generateSudoku();
