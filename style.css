@@ -61,7 +61,7 @@ body{
     width: var(--cell-size);
     border-radius: var(--border-radius);
     background-color: var(--bg-cell) ;
-    color: var(---text-color);
+    color: var(--text-color);
     font-size: var(--font-size);
     cursor: pointer;
     
